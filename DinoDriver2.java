@@ -10,9 +10,9 @@ public class DinoDriver2
     public static void main(String[] args)
     {
         //Dinosaur[] pop = new Dinosaur[25];
-        //Create an arraylist of dinos called dinopop
+                                                                                                                                                                                                                               //Create an arraylist of dinos called dinopop
         ArrayList <Dinosaur> dinoPop = new ArrayList<Dinosaur>();
-        for(int i= 0; i< 30; i++)
+        for(int i= 0; i< 25; i++)
         {
             double rand = Math.random();
             if(rand < 0.33)// make a TRex
@@ -73,7 +73,7 @@ public class DinoDriver2
     //Dinosaur t3 = t1;//these are alliases of each other
     //.getbattleFactor(t2));
 
-    private static void battleRound(ArrayList<Dinosaur>)
+    private static void battleRound(ArrayList<Dinosaur> p)
     {
         //modify this code to call update method with correct
         //dinos winning and losing.
@@ -83,6 +83,7 @@ public class DinoDriver2
          */
         int attWins = 0;
         int battles = 0;
+        
         //traverse the array, and have all dinos battle one other random
         for(Dinosaur d : p )
         {
@@ -94,7 +95,7 @@ public class DinoDriver2
                 int x = 0;
                 do
                 {
-                    rand = (int)(Math.random()*p.size);
+                    rand = (int)(Math.random()*p.size());
 
                     //System.out.println("\t" + p[rand].getType() + " " + p[rand].getHealth());
 
@@ -112,17 +113,18 @@ public class DinoDriver2
                     p.get(rand).update(d);
                 }
             }
-            System.out.println("**************** Total Battles " + battles+ " & attacker wins " + attWins);
+            System.out.println("**************** Total Battles " + battles+ " & attacker wins " + attWins +"\t" );
+            
         }
 
     }
 
-    private static void growUp(Dinosaur d)// d = t1, they're alliases
+    private static void growUp(ArrayList<Dinosaur> p)// d = t1, they're alliases
     {
         int rand = (int)(Math.random()*35);   
         //d.setbattleCount(rand);
         for( int i=0; i < rand; i++)
-            d.ageUp();
+            p.ageUp();
 
     }
 

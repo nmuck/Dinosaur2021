@@ -217,9 +217,11 @@ public abstract class Dinosaur
         if(loser.getHealth() <= 0)
         {
             loser.setHealth(0);
+            
             loser.setPopulation(loser.getPopulation()-1);
             
         }
+        System.out.println("\t" + loser + loser.wins + loser.battleCount);
         //System.out.println(this.wins+ "," + this.battleCount +","+ this.health);
         //System.out.print("\t"+loser.wins+ "/" + loser.battleCount +"/"+ loser.health);
         //loser.setbattleCount++;
@@ -230,9 +232,6 @@ public abstract class Dinosaur
     }
 
     public abstract boolean attack (Dinosaur other);
-    
-    
-   
 
     /**
      *Return this dinosaur as a String 
